@@ -43,6 +43,12 @@ module.exports = {
     "no-console": ["warn", { allow: ["error"] }],
     "@typescript-eslint/no-non-null-assertion": "off",
     "no-unused-expressions": ["error", { enforceForJSX: true }],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
   },
   settings: {
     react: {
