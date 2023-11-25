@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from "@chakra-ui/react"
+import { Box, Flex, Image, Text } from "@chakra-ui/react"
 import homeIcon from "@/assets/homeIcon.svg"
 import reportsIcon from "@/assets/reportsIcon.svg"
 import chatIcon from "@/assets/chatIcon.svg"
@@ -12,8 +12,13 @@ interface Props {
 }
 const FooterICons = ({ icon, text, bold }: Props) => {
   return (
-    <Flex flexDir="column" gap="10px">
-      <Image src={icon} />
+    <Flex flexDir="column" gap="10px" cursor="pointer" alignItems="center">
+      <Box
+        width={text === "Chat" ? "50px" : ""}
+        height={text === "Chat" ? "30px" : ""}
+      >
+        <Image src={icon} />
+      </Box>
       <Text color={bold ? "#001233s" : "#c1c4cd"} fontSize="12px">
         {text}
       </Text>
@@ -27,7 +32,7 @@ const Footer = () => {
       p="20px 35px 18px 25px"
       bgColor="#fff"
       boxShadow=" 0px -5px 20px 5px rgba(0, 0, 0, 0.04)"
-      alignItems="center"
+      alignItems="end"
       justifyContent="space-between"
     >
       <FooterICons icon={homeIcon} text="Home" />
