@@ -17,6 +17,12 @@ import savingsIcon from "@/assets/savingsIcon.svg"
 import menuIcon from "@/assets/menuIcon.svg"
 import Footer from "@/reusables/Footer"
 import CategoryBreakedown from "@/reusables/CategoryBreakedown"
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from "react-circular-progressbar"
+import "react-circular-progressbar/dist/styles.css"
 
 const tabStyle = {
   fontSize: "13px",
@@ -26,7 +32,7 @@ const tabStyle = {
 
 const Budget = () => {
   return (
-    <>
+    <Box>
       <Header />
       <Box p="20px 30px">
         <Text fontSize="28px" fontWeight="700">
@@ -51,7 +57,7 @@ const Budget = () => {
         </Box>
         <Tabs mt="30px" position="relative">
           <Flex justifyContent="space-between">
-            <TabList>
+            <TabList width="100%" borderBottom="none">
               <Tab sx={tabStyle} _selected={{ color: "#0466C8" }}>
                 Last month
               </Tab>
@@ -61,17 +67,101 @@ const Budget = () => {
             </TabList>
             <Image src={menuIcon} />
           </Flex>
-          <TabIndicator height="2px" bg="#0466C8" width="20px" />
+          <TabIndicator height="2px" bg="#0466C8" />
           <TabPanels>
-            <TabPanel>
-              <p>one</p>
+            <TabPanel pt="30px">
+              <Flex
+                justifyContent="center"
+                flexDir="column"
+                gap="21px"
+                alignItems="center"
+              >
+                <Box width="150px">
+                  <CircularProgressbarWithChildren
+                    value={100}
+                    text="20%"
+                    strokeWidth={6}
+                    styles={buildStyles({
+                      textColor: "#0466C8",
+                      pathColor: "rgb(4, 102, 200, 0.4)",
+                      trailColor: "transparent",
+                    })}
+                  >
+                    <div style={{ width: "88%" }}>
+                      <CircularProgressbar
+                        value={20}
+                        styles={buildStyles({
+                          trailColor: "transparent",
+                          pathColor: "#0466C8",
+                        })}
+                      />
+                    </div>
+                  </CircularProgressbarWithChildren>
+                </Box>
+                <Flex flexDir="column" gap="5px" alignItems="center">
+                  <Text color="#707480" fontSize="14px" letterSpacing="-0.07px">
+                    Amount spent so far
+                  </Text>
+                  <Flex>
+                    <Text letterSpacing="-0.08px" color="#0466C8">
+                      ₦20,000
+                    </Text>
+                    /
+                    <Text color="#67A2DC" letterSpacing="-0.08px">
+                      ₦60,000
+                    </Text>
+                  </Flex>
+                </Flex>
+              </Flex>
             </TabPanel>
-            <TabPanel>
-              <p>Two</p>
+            <TabPanel pt="30px">
+              <Flex
+                justifyContent="center"
+                flexDir="column"
+                gap="21px"
+                alignItems="center"
+              >
+                <Box width="150px">
+                  <CircularProgressbarWithChildren
+                    value={100}
+                    text="49%"
+                    strokeWidth={6}
+                    styles={buildStyles({
+                      textColor: "#0466C8",
+                      pathColor: "rgb(4, 102, 200, 0.4)",
+                      trailColor: "transparent",
+                    })}
+                  >
+                    <div style={{ width: "88%" }}>
+                      <CircularProgressbar
+                        value={49}
+                        styles={buildStyles({
+                          trailColor: "transparent",
+                          pathColor: "#0466C8",
+                        })}
+                      />
+                    </div>
+                  </CircularProgressbarWithChildren>
+                </Box>
+                <Flex flexDir="column" gap="5px" alignItems="center">
+                  <Text color="#707480" fontSize="14px" letterSpacing="-0.07px">
+                    Amount spent so far
+                  </Text>
+                  <Flex>
+                    <Text letterSpacing="-0.08px" color="#0466C8">
+                      ₦50,000
+                    </Text>
+                    /
+                    <Text color="#67A2DC" letterSpacing="-0.08px">
+                      ₦120,000
+                    </Text>
+                  </Flex>
+                </Flex>
+              </Flex>
             </TabPanel>
           </TabPanels>
         </Tabs>
-        <Box>
+        <Box pt="17px">
           <Text fontSize="28px" fontWeight="700">
             Category Breakdown
           </Text>
@@ -143,15 +233,10 @@ const Budget = () => {
           </Flex>
         </Box>
       </Box>
-      <Box
-        position="fixed"
-        bottom="0px"
-        width="100%"
-        height={{ base: "210px", md: "auto" }}
-      >
+      <Box position="fixed" bottom="0px" width="100%" height="auto">
         <Footer />
       </Box>
-    </>
+    </Box>
   )
 }
 
