@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/react"
 import {
   QueryCache,
   QueryClient,
@@ -37,7 +38,7 @@ const queryClient = new QueryClient({
 const Providers = (props: Props) => {
   return (
     <QueryClientProvider client={queryClient}>
-      {props.children}
+      <ChakraProvider>{props.children}</ChakraProvider>
     </QueryClientProvider>
   )
 }
