@@ -12,8 +12,11 @@ import {
   Text,
 } from "@chakra-ui/react"
 import blueNairaIcon from "@/assets/blueNairaIcon.svg"
+import foodandDrinkIcon from "@/assets/foodandDrinkIcon.svg"
+import savingsIcon from "@/assets/savingsIcon.svg"
 import menuIcon from "@/assets/menuIcon.svg"
 import Footer from "@/reusables/Footer"
+import CategoryBreakedown from "@/reusables/CategoryBreakedown"
 
 const tabStyle = {
   fontSize: "13px",
@@ -72,9 +75,80 @@ const Budget = () => {
           <Text fontSize="28px" fontWeight="700">
             Category Breakdown
           </Text>
+          <Flex flexDir="column" gap="17px" mt="20px">
+            <CategoryBreakedown
+              text="Food and Drink"
+              percentage={40}
+              regulaPrice="42,000"
+              salePrice="20,000"
+              icon={foodandDrinkIcon}
+            />
+            <CategoryBreakedown
+              text="Savings"
+              percentage={20}
+              regulaPrice="24,000"
+              salePrice="10,000"
+              icon={savingsIcon}
+            />
+            <CategoryBreakedown
+              text="Food and Drink"
+              percentage={40}
+              regulaPrice="42,000"
+              salePrice="20,000"
+              icon={foodandDrinkIcon}
+            />
+            <CategoryBreakedown
+              text="Savings"
+              percentage={20}
+              regulaPrice="24,000"
+              salePrice="10,000"
+              icon={savingsIcon}
+            />
+            <CategoryBreakedown
+              text="Food and Drink"
+              percentage={40}
+              regulaPrice="42,000"
+              salePrice="20,000"
+              icon={foodandDrinkIcon}
+            />
+
+            <CategoryBreakedown
+              text="Savings"
+              percentage={20}
+              regulaPrice="24,000"
+              salePrice="10,000"
+              icon={savingsIcon}
+            />
+            <CategoryBreakedown
+              text="Food and Drink"
+              percentage={40}
+              regulaPrice="42,000"
+              salePrice="20,000"
+              icon={foodandDrinkIcon}
+            />
+            <CategoryBreakedown
+              text="Savings"
+              percentage={20}
+              regulaPrice="24,000"
+              salePrice="10,000"
+              icon={savingsIcon}
+            />
+            <CategoryBreakedown
+              text="Food and Drink"
+              percentage={40}
+              regulaPrice="42,000"
+              salePrice="20,000"
+              icon={foodandDrinkIcon}
+            />
+          </Flex>
         </Box>
       </Box>
-      <Box position="fixed" bottom="0px" width="100%" height="210px">
+      <Box
+        position="fixed"
+        bottom="0px"
+        width="100%"
+        height={{ base: "210px", md: "auto" }}
+      >
         <Footer />
       </Box>
     </>
