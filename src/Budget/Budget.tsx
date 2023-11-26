@@ -233,7 +233,7 @@ const Budget = () => {
           </Flex>
         </Box>
       </Box>
-      <Box position="fixed" bottom="0px" width="100%" height="auto">
+      <Box position="sticky" bottom="0px" width="100%" height="auto">
         <Footer />
       </Box>
     </Box>
