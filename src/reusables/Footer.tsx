@@ -32,8 +32,13 @@ const Footer = () => {
       p="20px 35px 18px 25px"
       bgColor="#fff"
       boxShadow=" 0px -5px 20px 5px rgba(0, 0, 0, 0.04)"
-      alignItems="end"
       justifyContent="space-between"
+      alignItems="baseline"
+      position="sticky"
+      minHeight="87px"
+      bottom="0"
+      width="100%"
+      zIndex="10"
     >
       <FooterICons icon={homeIcon} text="Home" />
       <FooterICons icon={reportsIcon} text="Reports" />
