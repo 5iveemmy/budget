@@ -52,7 +52,7 @@ const Budget = () => {
           p="9px 9px 6px 20px"
         >
           <Text fontSize="28px" fontWeight="700" letterSpacing="-1.4px">
-            ₦120,000
+            ₦150,000
           </Text>
         </Box>
         <Tabs mt="30px" position="relative">
